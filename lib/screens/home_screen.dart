@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:qr_scan/providers/db_provider.dart';
 import 'package:qr_scan/screens/screens.dart';
 import 'package:qr_scan/widgets/widgets.dart';
+
+import '../providers/ui_provider.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -30,8 +34,12 @@ class _HomeScreenBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final uiProvider = Provider.of<UIProvider>(context);
     // Canviar per a anar canviant entre pantalles
-    const currentIndex = 1;
+    final currentIndex = uiProvider.selectedMenuOpt;
+
+    // CREACIO TEMP
+    DBProvider.db.database;
 
     switch (currentIndex) {
       case 0:
