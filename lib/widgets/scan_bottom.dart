@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../models/scan_model.dart';
+import '../providers/db_provider.dart';
+
 class ScanButton extends StatelessWidget {
   const ScanButton({Key? key}) : super(key: key);
 
@@ -12,6 +15,8 @@ class ScanButton extends StatelessWidget {
       ),
       onPressed: () {
         print('Botó polsat!');
+        ScanModel nouScan = ScanModel(valor: "https://paucasesnovescifp.cat");
+        DBProvider.db.insertScan(nouScan);
       },
     );
   }
