@@ -39,10 +39,10 @@ class _HomeScreenBody extends StatelessWidget {
     // Canviar per a anar canviant entre pantalles
     final currentIndex = uiProvider.selectedMenuOpt;
 
-    // CREACIO TEMP
+    /* CREACIO TEMP
     DBProvider.db.database;
     ScanModel nouScan = ScanModel(valor: "https://paucasesnovescifp.cat");
-    DBProvider.db.insertScan(nouScan);
+    DBProvider.db.insertScan(nouScan); */
 
     switch (currentIndex) {
       case 0:
