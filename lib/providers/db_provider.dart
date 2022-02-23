@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:flutter/cupertino.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:qr_scan/models/scan_model.dart';
 import 'package:sqflite/sqflite.dart';
@@ -71,7 +70,7 @@ class DBProvider {
     return null;
   }
 
-  Future<List<ScanModel?>> getScanByTipus(String tipus) async {
+  Future<List<ScanModel>> getScanByTipus(String tipus) async {
     final db = await database;
     final res = await db.query('Scans', where: 'tipus = ?', whereArgs: [tipus]);
     return res.isNotEmpty ? res.map((e) => ScanModel.fromMap(e)).toList():[];
@@ -85,9 +84,7 @@ class DBProvider {
 
   Future<int> deleteAllScans() async {
     final db = await database;
-    final res = db.rawDelete('''
-      DELETE FROM Scans
-    ''');
+    final res = db.delete('Scans');
     return res;
   }
 

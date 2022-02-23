@@ -25,11 +25,15 @@ class ScanListProvider extends ChangeNotifier {
   }
 
   carregaScansPerTipus(String tipus) async {
-
+    final scansPerTipus = await DBProvider.db.getScanByTipus(tipus);
+    this.scans = [...scansPerTipus];
+    notifyListeners();
   }
 
   esborraTots() async {
-
+    /*final esborraScans = await DBProvider.db.deleteAllScans();
+    scans = [...esborraScans];
+    notifyListeners();*/
   }
 
   esborraPerId(int id) async {
