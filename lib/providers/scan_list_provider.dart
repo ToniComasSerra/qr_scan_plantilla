@@ -39,6 +39,7 @@ class ScanListProvider extends ChangeNotifier {
 
   esborraPerId(int id) async {
     final esborraScanPerId = await DBProvider.db.deleteScan(id);
+    scans.removeWhere((element) => element.id == id);
     notifyListeners();
   }
 }
