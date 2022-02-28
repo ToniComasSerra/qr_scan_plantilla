@@ -22,7 +22,7 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
       body: const _HomeScreenBody(),
-      bottomNavigationBar: CustomNavigationBar(),
+      bottomNavigationBar: const CustomNavigationBar(),
       floatingActionButton: const ScanButton(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );

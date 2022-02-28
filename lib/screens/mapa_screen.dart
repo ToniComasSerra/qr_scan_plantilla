@@ -11,7 +11,7 @@ class MapaScreen extends StatefulWidget {
 }
 
 class _MapaScreenState extends State<MapaScreen> {
-  Completer<GoogleMapController> _controller = Completer();
+  final Completer<GoogleMapController> _controller = Completer();
 
   @override
   Widget build(BuildContext context) {
@@ -22,9 +22,9 @@ class _MapaScreenState extends State<MapaScreen> {
       tilt: 30,
     );
 
-    Set<Marker> markers = new Set<Marker>();
-    markers.add(new Marker(
-      markerId: MarkerId('Test'),
+    Set<Marker> markers = <Marker>{};
+    markers.add(Marker(
+      markerId: const MarkerId('Test'),
       position: scan.getLatLng()
     ));
 
