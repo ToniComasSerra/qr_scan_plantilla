@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:qr_scan/models/scan_model.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:qr_scan/models/scan_model.dart';
 
 class MapaScreen extends StatefulWidget {
   const MapaScreen({Key? key}) : super(key: key);

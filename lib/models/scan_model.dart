@@ -7,10 +7,10 @@ class ScanModel {
     this.tipus,
     required this.valor,
   }){
-    if(this.valor.contains('http')) {
-      this.tipus = 'http';
+    if(valor.contains('http')) {
+      tipus = 'http';
     } else {
-      this.tipus = 'geo';
+      tipus = 'geo';
     }
   }
 
@@ -19,7 +19,7 @@ class ScanModel {
   String valor;
 
   LatLng getLatLng() {
-    final latLng = this.valor.substring(4).split(',');
+    final latLng = valor.substring(4).split(',');
     final latitude = double.parse(latLng[0]);
     final longitude = double.parse(latLng[1]);
     return LatLng(latitude, longitude);

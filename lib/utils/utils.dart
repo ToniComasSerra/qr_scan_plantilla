@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:qr_scan/models/scan_model.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:qr_scan/models/scan_model.dart';
 
 void launchURL(BuildContext context, ScanModel scan) async {
   final url = scan.valor;

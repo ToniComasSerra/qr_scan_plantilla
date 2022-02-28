@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:qr_scan/models/scan_model.dart';
-import 'package:qr_scan/providers/db_provider.dart';
+import 'package:qr_scan/providers/providers.dart';
 
 class ScanListProvider extends ChangeNotifier {
   List<ScanModel> scans = [];
@@ -12,7 +12,7 @@ class ScanListProvider extends ChangeNotifier {
     nouScan.id = id;
 
     if(nouScan.tipus == tipusSeleccionat) {
-      this.scans.add(nouScan);
+      scans.add(nouScan);
       notifyListeners();
     }
     return nouScan;
@@ -26,8 +26,8 @@ class ScanListProvider extends ChangeNotifier {
 
   carregaScansPerTipus(String tipus) async {
     final scansPerTipus = await DBProvider.db.getScanByTipus(tipus);
-    this.scans = [...scansPerTipus];
-    this.tipusSeleccionat = tipus;
+    scans = [...scansPerTipus];
+    tipusSeleccionat = tipus;
     notifyListeners();
   }
 

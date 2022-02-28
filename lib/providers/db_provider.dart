@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:path_provider/path_provider.dart';
 import 'package:qr_scan/models/scan_model.dart';
 import 'package:sqflite/sqflite.dart';
@@ -11,14 +10,13 @@ class DBProvider {
   DBProvider._();
 
   Future<Database> get database async {
-    if(_database == null) _database = await initDB();
+    _database ??= await initDB();
     return _database!;
   }
 
   Future<Database> initDB() async {
     Directory documentsDirectory = await getApplicationDocumentsDirectory();
     final path = join(documentsDirectory.path, 'Scans.db');
-    print(path);
 
     return await openDatabase(
       path,
@@ -51,7 +49,6 @@ class DBProvider {
   Future<int> insertScan(ScanModel nouScan) async {
     final db = await database;
     final res = await db.insert('Scans', nouScan.toMap());
-    print(res);
     return res;
   }
 

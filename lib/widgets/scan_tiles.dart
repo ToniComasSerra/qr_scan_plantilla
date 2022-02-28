@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:qr_scan/providers/scan_list_provider.dart';
+import 'package:qr_scan/providers/providers.dart';
 import 'package:qr_scan/utils/utils.dart';
 
 class ScanTiles extends StatelessWidget {
@@ -18,8 +18,8 @@ class ScanTiles extends StatelessWidget {
         key: UniqueKey(),
         background: Container(
           color: Colors.red,
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
+          child: const Padding(
+            padding: EdgeInsets.all(8.0),
             child: Align(
               child: Icon(Icons.delete_forever),
               alignment: Alignment.centerRight,
@@ -31,11 +31,11 @@ class ScanTiles extends StatelessWidget {
         },
         child: ListTile(
           leading: Icon(
-            this.tipus == 'http' ? Icons.home_outlined : Icons.map_outlined
+            tipus == 'http' ? Icons.home_outlined : Icons.map_outlined
           ),
           title: Text(scans[index].valor),
           subtitle: Text(scans[index].id.toString()),
-          trailing: Icon(
+          trailing: const Icon(
             Icons.keyboard_arrow_right_outlined,
             color: Colors.grey  
           ),

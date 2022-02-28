@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:qr_scan/models/scan_model.dart';
-import 'package:qr_scan/providers/db_provider.dart';
-import 'package:qr_scan/providers/scan_list_provider.dart';
+import 'package:qr_scan/providers/providers.dart';
 import 'package:qr_scan/screens/screens.dart';
 import 'package:qr_scan/widgets/widgets.dart';
-
-import '../providers/ui_provider.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
